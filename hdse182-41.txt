@@ -1,0 +1,11 @@
+message = input('enter message').lower()
+offset = int(input('enter offset (enter a negative number to decrypt)'))
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+enc_alphabet = (alphabet[alphabet.index(alphabet[offset]):len(alphabet)])+ alphabet[0:offset]
+
+data = str.maketrans(alphabet,enc_alphabet)
+final_message = str.translate(message, data)
+
+print(final_message)
